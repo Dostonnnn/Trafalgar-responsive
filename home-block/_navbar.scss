@@ -1,0 +1,56 @@
+.navbar {
+  @include flex(row);
+  padding: 30px 50px;
+  &-img {
+    width: auto;
+    height: auto;
+  }
+  &-list {
+    @include flex(row);
+    gap: 25px;
+  }
+  &-item {
+    width: 135px;
+    text-align: center;
+    @include flex(row);
+    justify-content: center;
+    height: 35px;
+  }
+  &-link {
+    @include font(18px, auto, $grey, 600);
+    transition: all 0.5s linear;
+    &:hover {
+      color: $hyfen;
+      background: $blue;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+    &:active {
+      color: $white;
+    }
+  }
+  &-burger {
+    @include flex(column);
+    display: none;
+    gap: 5px;
+    &:hover &-div {
+      background: $blue;
+    }
+    &-div {
+      @extend %burger-div;
+      transition: all 0.3s linear;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    width: 100%;
+    &-list {
+      display: none;
+    }
+    &-burger {
+      display: flex;
+    }
+  }
+}

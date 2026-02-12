@@ -1,0 +1,82 @@
+$whitesmoke: #f5f5f5;
+$white: #fff;
+$blue: rgba(69, 143, 246, 1);
+$hyfen: #1f1534;
+$black: #000000;
+$grey: #7d7987;
+
+@mixin font($size, $width, $color, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+  width: $width;
+  font-style: normal;
+  line-height: normal;
+  color: $color;
+}
+@mixin button-1($width, $height) {
+  background: $blue;
+  width: $width;
+  height: $height;
+  color: $white;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s linear;
+  &:hover {
+    background: transparent;
+    border: 3px solid $blue;
+    color: $blue;
+  }
+  &:active {
+    background: $blue;
+    color: $hyfen;
+  }
+}
+@mixin button-2($width, $height) {
+  background: transparent;
+  width: $width;
+  height: $height;
+  color: $blue;
+  border: 3px solid $blue;
+  border-radius: 20px;
+  transition: all 0.3s linear;
+  &:hover {
+    background: $blue;
+    color: $white;
+    border: none;
+  }
+}
+@mixin flex($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: $direction;
+}
+%burger-div {
+  width: 20px;
+  height: 3px;
+  background: $black;
+}
+%card {
+  height: 270px;
+  width: 25%;
+  padding: 25px;
+  border-radius: 15px;
+  background: $white;
+  border: 2px solid $whitesmoke;
+  transition: all 0.3s linear;
+  @include flex(column);
+  align-items: flex-start;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 10px 10px 5px $whitesmoke;
+  }
+  &:active {
+    background: $blue;
+    color: $white;
+  }
+  &:active p,
+  &:active h5 {
+    color: $white;
+    opacity: 1;
+  }
+}

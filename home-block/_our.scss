@@ -1,0 +1,79 @@
+.our {
+  padding: 50px;
+  @include flex(column);
+  gap: 50px;
+  &-title {
+    @include font(30px, auto, $black, 700);
+  }
+  &-line {
+    height: 2px;
+    width: 10%;
+    background: $black;
+  }
+  &-text {
+    text-align: center;
+    @include font(16px, 900px, $black, 600);
+    opacity: 0.3;
+  }
+  &-cards {
+    @include flex(row);
+    gap: 30px;
+    width: 90%;
+    flex-wrap: wrap;
+    &-card {
+      @extend %card;
+      &-title {
+        @include font(20px, auto, $black, 700);
+      }
+      &-text {
+        @include font(14px, auto, $black, 500);
+        line-height: 20px;
+        opacity: 0.3;
+      }
+    }
+    &-card img {
+      width: 65px;
+      height: 80px;
+    }
+  }
+  &-btn {
+    @include button-2(140px, 40px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .our {
+    width: 100%;
+    &-title {
+      width: 100%;
+      text-align: center;
+    }
+    &-text {
+      width: 90%;
+      text-align: center;
+    }
+    &-line {
+      width: 10%;
+    }
+    &-cards {
+      justify-content: center;
+      &-card {
+        width: 230px;
+        &-title {
+          width: 100%;
+        }
+        &-text {
+          width: 100%;
+        }
+      }
+      &-card img {
+        width: 100%;
+        align-self: center;
+      }
+    }
+    &-btn {
+      @include button-2(100px, 30px);
+      font-size: 10px;
+    }
+  }
+}

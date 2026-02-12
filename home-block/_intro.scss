@@ -1,0 +1,58 @@
+.intro {
+  @include flex(row);
+  padding: 50px;
+  &-left {
+    @include flex(column);
+    gap: 40px;
+  }
+  &-title {
+    @include font(40px, 400px, $black, 700);
+    text-align: left;
+  }
+  &-text {
+    @include font(16px, 400px, $black, 500);
+    opacity: 0.6;
+    line-height: 25px;
+  }
+  &-btn {
+    @include button-1(140px, 40px);
+    align-self: self-start;
+  }
+  &-right {
+    width: 600px;
+  }
+  &-right img {
+    width: 600px;
+    height: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .intro {
+    width: 100%;
+    flex-direction: column;
+    &-title {
+      @include font(40px, 100%, $black, 700);
+      margin: auto;
+      text-align: center;
+    }
+    &-text {
+      @include font(16px, 100%, $black, 500);
+      margin: auto;
+      text-align: center;
+    }
+    &-btn {
+      @include button-1(100px, 30px);
+      font-size: 10px;
+      align-self: center;
+    }
+    &-right {
+      width: 100%;
+      margin-top: 50px;
+    }
+    &-right img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

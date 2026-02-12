@@ -1,0 +1,35 @@
+.customer {
+  width: 80%;
+  background: $blue;
+  margin: 50px auto;
+  border-radius: 20px;
+  padding: 30px 50px;
+  @include flex(column);
+  gap: 40px;
+  &-title {
+    @include font(30px, 100%, $white, 700);
+    text-align: center;
+  }
+  &-line {
+    height: 2px;
+    width: 10%;
+    background: $white;
+  }
+  &-area {
+    width: 100%;
+    @include flex(row);
+    gap: 20px;
+    &-info {
+      @include flex(column);
+      width: 40%;
+      align-items: self-start;
+      @include font(10px, 100%, $white, 400);
+    }
+    &-text {
+      @include font(16px, 100%, $white, 600);
+    }
+  }
+  span {
+    @include font(16px, 100%, $white, 700);
+  }
+}
