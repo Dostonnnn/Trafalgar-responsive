@@ -312,6 +312,21 @@ ul {
   color: #fff;
 }
 
+@media (max-width: 1200px) {
+  .customer {
+    width: inherit;
+  }
+  .customer-area {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+  }
+  .customer-area-info {
+    margin: auto;
+    align-items: center;
+  }
+}
 .download {
   display: flex;
   align-items: center;

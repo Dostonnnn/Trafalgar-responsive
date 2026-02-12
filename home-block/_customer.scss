@@ -19,6 +19,7 @@
     width: 100%;
     @include flex(row);
     gap: 20px;
+
     &-info {
       @include flex(column);
       width: 40%;
@@ -31,5 +32,21 @@
   }
   span {
     @include font(16px, 100%, $white, 700);
+  }
+}
+
+@media (max-width: 1200px) {
+  .customer {
+    width: inherit;
+    &-area {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      text-align: center;
+      &-info {
+        margin: auto;
+        align-items: center;
+      }
+    }
   }
 }
